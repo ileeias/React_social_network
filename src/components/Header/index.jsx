@@ -28,6 +28,10 @@ export default function Header({
               My posts
             </Link>
             <span className={styles.vertical_line}></span>
+            <Link to="/5" className="nav-link">
+              All posts
+            </Link>
+            <span className={styles.vertical_line}></span>
             <Link to="/3" className="nav-link">
               Peoples
             </Link>

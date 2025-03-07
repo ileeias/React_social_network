@@ -1,0 +1,15 @@
+.container {
+  position: absolute;
+  width: 588px;
+  height: 1366px;
+  left: 35%;
+  top: 64px;
+}
+.post_list {
+  display: flex;
+  flex-direction: column;
+}
+.comments {
+  position: relative;
+
+}

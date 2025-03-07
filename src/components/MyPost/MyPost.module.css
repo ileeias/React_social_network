@@ -88,3 +88,6 @@ color: var(--blue)
   background: none;
 
 }
+.card_panel .label {
+  cursor: pointer;
+}

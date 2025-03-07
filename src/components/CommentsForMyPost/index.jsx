@@ -4,9 +4,6 @@ export default function CommentsForMyPost({ comments, id }) {
   return (
     <div className={styles.container}>
       <input id={`${id}comments`} type="checkbox" className={styles.input} />
-      <label htmlFor={`${id}comments`} className={styles.label}>
-        💬
-      </label>
       <article className={styles.ac}>
         {comments.map((comment) => (
           <div className={styles.comment_box}>

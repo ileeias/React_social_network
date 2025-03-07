@@ -1,7 +1,7 @@
 import { axiosInstance } from '../../services/axios';
-import styles from './MyPost.module.css';
+import styles from './Post.module.css';
 
-export default function MyPost({
+export default function Post({
   id,
   img,
   title,
@@ -10,30 +10,11 @@ export default function MyPost({
   update,
   likes,
   dislikes,
-  newPost,
   changePosts,
+  newPost,
   author_username,
   photo,
 }) {
-  function DeletePost(e) {
-    const idPost = e.target.id;
-    const token = localStorage.getItem('token');
-    axiosInstance
-      .delete('my_posts', {
-        data: { id: idPost },
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Token ${token}`,
-        },
-      })
-      .then(() => {
-        newPost(!changePosts);
-      })
-      .catch((error) => {
-        console.error('Произошла ошибка при удалении поста:', error);
-      });
-  }
-
   async function Like(e) {
     try {
       const postID = e.currentTarget.getAttribute('data-post-id');
@@ -134,9 +115,6 @@ export default function MyPost({
           ➕
         </label>
       </div>
-      <button id={id} onClick={DeletePost}>
-        Удалить этот пост
-      </button>
     </div>
   );
 }

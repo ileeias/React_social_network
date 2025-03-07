@@ -31,9 +31,6 @@ export default function CreateComment({ id, newComment, changePosts }) {
         type="checkbox"
         className={styles.input}
       />
-      <label htmlFor={`${id}comments_create`} className={styles.label}>
-        ➕
-      </label>
       <article className={styles.ac}>
         <div className={styles.create_comment}>
           <form onSubmit={handleSubmit(onSubmit, onError)}>
@@ -42,17 +39,6 @@ export default function CreateComment({ id, newComment, changePosts }) {
               placeholder="Прокомментируй..."
               {...register('text', { required: true })}
             ></textarea>
-            {/* <div className={styles.image_container}>
-              <label htmlFor="file_input" className={styles.image_label}>
-                Картинка
-              </label>
-              <input
-                type="file"
-                id="file_input"
-                className={styles.image_input}
-                {...register('image', { required: true })}
-              />
-            </div> */}
             <button type="sunmit" className={styles.create_new_comment}>
               отправить комментарий
             </button>

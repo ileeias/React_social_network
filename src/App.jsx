@@ -11,6 +11,7 @@ import FirstPage from './pages/FirstPage';
 import PeoplePage from './pages/PeoplePage';
 import MyFriends from './pages/MyFriends';
 import SideBar from './components/SideBar';
+import AllPosts from './pages/AllPosts';
 
 function App() {
   const navigate = useNavigate()
@@ -70,6 +71,7 @@ function App() {
         <Route path="/2" element={<MyPostPage changeModalLogin={changeModalLogin}/>} />
         <Route path="/3" element={<PeoplePage />} />
         <Route path="/4" element={<MyFriends />} />
+        <Route path="/5" element={<AllPosts changeModalLogin={changeModalLogin}/>} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </>
