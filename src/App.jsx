@@ -8,6 +8,9 @@ import { useState, useEffect } from 'react';
 import { axiosInstance } from './services/axios';
 import './assets/css/style.css';
 import FirstPage from './pages/FirstPage';
+import PeoplePage from './pages/PeoplePage';
+import MyFriends from './pages/MyFriends';
+import SideBar from './components/SideBar';
 
 function App() {
   const navigate = useNavigate()
@@ -65,6 +68,8 @@ function App() {
         <Route path="/" element={<FirstPage />} />
         <Route path="/1" element={<CabinetPage changeModalLogin={changeModalLogin}/>} />
         <Route path="/2" element={<MyPostPage changeModalLogin={changeModalLogin}/>} />
+        <Route path="/3" element={<PeoplePage />} />
+        <Route path="/4" element={<MyFriends />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </>

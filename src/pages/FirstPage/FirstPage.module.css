@@ -1,52 +1,49 @@
 .container {
-    display: grid;
-    grid-template-columns: 700px 700px;
-    grid-template-rows: 100px 600px;
-    padding: 50px;
+  height: 100%;
+  position: absolute;
+  top: 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 400px);
+  grid-template-rows: repeat(4, 400px);
 }
-img {
-    width: 100%;
-    grid-row: span 2;
+.crop_cont {
+  position: relative;
+  width: 400px;
+  background-color: black;
+  height: 600px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.crop_cont img {
+  border: solid 2px white;
+  width: 800px;
+  transform: translate(-30%);
+}
+.crop_cont img:hover {
+  width: 100%;
+  border: transparent;
+  transform: none;
+}
+.crop_cont:last-child {
+  position: absolute;
+  right: -400px;
+  height: 100%;
 }
 .title {
-    font-size: 50px;
-    justify-self: center;
+  position: absolute;
+  font-size: 50px;
+  justify-self: center;
+  top: 3 0%;
+  left: 0%;
+  z-index: 10;
+  color:aliceblue;
 }
 .text {
-    display: flex;
-    flex-direction: column;
-    font-size: 30px;
-    justify-self: center;
-    align-items: center;
-
+  position: absolute;
+  font-size: 30px;
+  width: 400px;
+  top: 50%;
+  left: 28%;
+  z-index: 10;
+  color: aliceblue;
 }
-.loader {
-    position: relative;
-    width: 108px;
-    display: flex;
-    justify-content: space-between;
-  }
-  .loader::after , .loader::before  {
-    content: '';
-    display: inline-block;
-    width: 48px;
-    height: 48px;
-    background-color: #000000;
-    background-image:  radial-gradient(circle 14px, #3f6b34 100%, transparent 0);
-    background-repeat: no-repeat;
-    border-radius: 50%;
-    animation: eyeMove 10s infinite , blink 10s infinite;
-  }
-  @keyframes eyeMove {
-    0%  , 10% {     background-position: 0px 0px}
-    13%  , 40% {     background-position: -15px 0px}
-    43%  , 70% {     background-position: 15px 0px}
-    73%  , 90% {     background-position: 0px 15px}
-    93%  , 100% {     background-position: 0px 0px}
-  }
-  @keyframes blink {
-    0%  , 10% , 12% , 20%, 22%, 40%, 42% , 60%, 62%,  70%, 72% , 90%, 92%, 98% , 100%
-    { height: 48px}
-    11% , 21% ,41% , 61% , 71% , 91% , 99%
-    { height: 18px}
-  }

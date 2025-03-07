@@ -47,7 +47,7 @@ export default function Profile({
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit, onError)}>
+        <form onSubmit={handleSubmit(onSubmit, onError)} className={styles.form}>
             <label htmlFor="phone_number">Номер телефона</label>
             <input type="number" {...register("phone_number", { required: true })} placeholder="Номер телефона"/>
             <label htmlFor="name">Имя</label>

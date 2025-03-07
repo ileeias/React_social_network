@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import { axiosInstance } from '../../services/axios';
 import MyPost from '../../components/MyPost';
-import CommentsForMyPost from "../../components/CommentsForMyPost"
-import BoxShadowWrapper from '../../components/Wrapper';
-import styles from "./MyPostPage.module.css"
+import CommentsForMyPost from '../../components/CommentsForMyPost';
+import styles from './MyPostPage.module.css';
 import Loader from '../../components/Loader';
+import CreatePost from '../../components/CreatePost';
+import CreateComment from '../../components/CreateComment';
 
 export default function MyPostPage({ changeModalLogin }) {
   const [my_posts, setMyposts] = useState(null);
-  const [comments, setCommets] = useState(null);
+  const [changePosts, setChangePosts] = useState(true);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   useEffect(() => {
@@ -22,8 +23,7 @@ export default function MyPostPage({ changeModalLogin }) {
           },
         });
 
-        setMyposts(response.data);
-        console.log(response.data);
+        setMyposts(response.data.reverse());
       } catch (error) {
         console.log(error);
         setError(error);
@@ -31,18 +31,17 @@ export default function MyPostPage({ changeModalLogin }) {
       }
     }
     getProfile();
-  }, []);
-  if (my_posts) {
-    console.log(my_posts);
-    my_posts.flatMap((post) => console.log(post[0]));
-  }
+  }, [changePosts]);
   return (
     <div className={styles.container}>
-      <Loader/>
-      {my_posts
-        ? my_posts.flatMap((post) => (
-            <BoxShadowWrapper key={post[0].id}>
+      <CreatePost newPost={setChangePosts} changePosts={changePosts} />
+      <div className={styles.post_list}>
+        {my_posts ? (
+          my_posts.flatMap((post) => (
+            <div className={styles.post_list}>
               <MyPost
+                key={post[0].id}
+                id={post[0].id}
                 img={'http://127.0.0.1:8000' + post[0].image}
                 title={post[0].title}
                 text={post[0].text}
@@ -50,11 +49,24 @@ export default function MyPostPage({ changeModalLogin }) {
                 update={post[0].update_date}
                 likes={post[0].likes_count}
                 dislikes={post[0].dislikes_count}
+                author_username={post[0].author_username}
+                photo={post[0].photo}
+                newPost={setChangePosts}
+                changePosts={changePosts}
               />
-              <CommentsForMyPost comments={post[0].comments}/>
-            </BoxShadowWrapper>
+              <div className={styles.comments}>
+                <CreateComment id={post[0].id} newComment={setChangePosts} changePosts={changePosts} />
+                <CommentsForMyPost
+                  comments={post[0].comments.reverse()}
+                  id={post[0].id}
+                />
+              </div>
+            </div>
           ))
-        : <Loader />}
+        ) : (
+          <Loader />
+        )}
+      </div>
     </div>
   );
 }

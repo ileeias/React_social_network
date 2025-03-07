@@ -1,0 +1,30 @@
+.side_bar {
+  
+}
+.side_bar_inner {
+  position: absolute;
+  width: 192px;
+  height: 498px;
+  left: 114px;
+  top: 64px;
+}
+.side_bar_inner a {
+  display: flex;
+  margin-bottom: 12px;
+  width: 192px;
+  height: 32px;
+  align-items: center;
+  padding-left: 40px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 22px;
+  align-items: center;
+  color: #595959;
+  text-decoration: none;
+}
+.side_bar_inner a:hover {
+  background: #dbd4d4;
+  font-size: 15px;
+  line-height: 22px;
+  color: #262626;
+}

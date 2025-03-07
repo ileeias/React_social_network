@@ -2,9 +2,11 @@ import styles from './Registration.module.css';
 import { useNavigate } from 'react-router-dom';
 import { axiosInstance } from '../../services/axios';
 import { useForm } from 'react-hook-form';
+import { useState } from 'react';
 
 export default function RegPage({ changeModalClose }) {
   const { register, handleSubmit } = useForm();
+  const [errors, setError] = useState(null);
   const navigate = useNavigate();
   const onError = (errors, e) => console.log('ERRORS', errors, e);
   const onSubmit = async (data) => {
@@ -13,7 +15,8 @@ export default function RegPage({ changeModalClose }) {
       console.log(response);
       navigate('/0');
     } catch (error) {
-      console.log('Error', error);
+      console.log('Error', error.response.data.message);
+      setError(error.response.data.message)
     }
   };
 
@@ -49,6 +52,7 @@ export default function RegPage({ changeModalClose }) {
                     {...register('repeat_password', { required: true })}
                   />
                 </div>
+                {errors ? <p className={styles.error}>{errors}</p> : <p></p>}
                 <button type="submit">Registration</button>
               </form>
             </div>

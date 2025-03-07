@@ -7,7 +7,7 @@
 .label {
   position: absolute;
   top: -90px;
-  right: 210px;
+  right: 72px;
   z-index: 20;
   cursor: pointer;
   line-height: 33px;
@@ -23,15 +23,7 @@
 .input {
   display: none;
 }
-.comment_box {
-  position: relative;
-  background: var(--secondary-color);
-  border-top: solid 1px var(--border-top);
-  width: 95%;
-  margin: auto;
-}
 .ac {
-  position: relative;
   overflow: hidden;
   height: 0px;
   position: relative;
@@ -51,4 +43,18 @@
 }
 .input:checked ~ .ac {
   height: 100%;
+}
+.text {
+  border: transparent;
+  width: 100%;
+  height: 50%;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-info);
+  padding: 0 10px;
+  resize: none;
+  overflow: hidden;
+}
+.create_new_comment {
+  width: 100%;
 }

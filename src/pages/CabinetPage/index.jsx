@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { axiosInstance } from '../services/axios';
-import Profile from '../components/Cabinet';
-import Loader from '../components/Loader';
+import { axiosInstance } from '../../services/axios';
+import Profile from '../../components/Cabinet';
+import Loader from '../../components/Loader';
+import styles from './CabinetPage.module.css';
 
 export default function CabinetPage({ changeModalLogin }) {
   const [profile, setProfile] = useState(null);
@@ -28,7 +29,7 @@ export default function CabinetPage({ changeModalLogin }) {
   }, []);
 
   return (
-    <div className="coteiner">
+    <div className={styles.container}>
       {profile ? (
         <Profile
           phone_number={profile.phone_number}

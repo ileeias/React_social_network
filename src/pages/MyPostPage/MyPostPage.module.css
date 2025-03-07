@@ -1,8 +1,15 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    width: 800px;
-    margin: auto;
-    
+  position: absolute;
+  width: 588px;
+  height: 1366px;
+  left: 35%;
+  top: 64px;
+}
+.post_list {
+  display: flex;
+  flex-direction: column;
+}
+.comments {
+  position: relative;
+
 }
