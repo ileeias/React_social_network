@@ -78,7 +78,7 @@ export default function Post({
         {photo ? (
           <img src={`http://127.0.0.1:8000${photo}`} alt="" />
         ) : (
-          <img src="../../src/assets/img/icons/ava.svg" alt="ava" />
+          <img src="/icons/ava.svg" alt="ava" />
         )}
         <p className={styles.username}>{author_username}</p>
         <p>{(update ? update : date).slice(0, 10)}</p>

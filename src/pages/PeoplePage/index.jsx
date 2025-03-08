@@ -28,7 +28,7 @@ export default function PeoplePage() {
             {peoples ? (peoples.map((people) => (
             <div className={styles.post}>
               <div className={styles.card_username}>
-                {people.photo ? <img src={`http://127.0.0.1:8000${people.photo}`} alt="" /> : <img src="../../src/assets/img/icons/ava.svg" alt="ava" />}
+                {people.photo ? <img src={`http://127.0.0.1:8000${people.photo}`} alt="" /> : <img src="/icons/ava.svg" alt="ava" />}
                 <p>{people.name} {people.surname}</p>
                 <p>{people.birthday}</p>
               </div>

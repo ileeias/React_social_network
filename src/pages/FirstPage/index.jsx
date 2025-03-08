@@ -7,7 +7,7 @@ export default function FirstPage() {
             <p className={styles.title}>Добро пожаловать!</p>
             <p className={styles.text}>Очень рады видеть вас на нашей странице!</p>
             {count.map((i) => (<div className={styles.crop_cont}>
-                <img key={i} src={`../../public/images/${i}.jpg`} alt={`image-${i}`} />
+                <img key={i} src={`/images/${i}.jpg`} alt={`image-${i}`} />
             </div>
             ))}
         </div>

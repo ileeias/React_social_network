@@ -36,12 +36,12 @@ export default function Header({
               Peoples
             </Link>
             <span className={styles.vertical_line}></span>
-            <img src="../../src/assets/img/icons/invites.svg" alt="icon" />
+            <img src="/icons/invites.svg" alt="icon" />
             <span className={styles.vertical_line}></span>
-            <img src="../../src/assets/img/icons/messages.svg" alt="icon" />
+            <img src="/icons/messages.svg" alt="icon" />
             <span className={styles.vertical_line}></span>
             <img
-              src="../../src/assets/img/icons/notifications.svg"
+              src="/icons/notifications.svg"
               alt="icon"
             />
             <span className={styles.vertical_line}></span>
